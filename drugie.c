@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <time.h>
-double leibniz(int n)
+double funkcja(int n)
 {
     double suma = 0;
     for(int i=1;i<=n;i++)
@@ -29,7 +29,7 @@ int main()
                 printf ("Jestem rodzicem, moj pid = %d \n",getpid() );
                 n = rand()%4900+101;
                 printf("Wylosowane N: %d\n",n);
-                printf("Przyblizenie pi: %f\n",leibniz(n));
+                printf("Przyblizenie pi: %f\n",funkcja(n));
             }
         else
             {
@@ -37,7 +37,7 @@ int main()
                 printf ("Pid rodzica = %d \n",getppid());
                 n = rand()%4900+101;
                 printf("Wylosowane N: %d\n",n);
-                printf("Przyblizenie pi: %f\n",leibniz(n));
+                printf("Przyblizenie pi: %f\n",funkcja(n));
     }
     }
 return 0;
