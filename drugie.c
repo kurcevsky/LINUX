@@ -7,13 +7,13 @@
 #include <time.h>
 double leibniz(int n)
 {
-    double nawias = 0;
+    double suma = 0;
     for(int i=1;i<=n;i++)
         {
-            nawias += pow(-1,i-1)/(2*i-1);
+            suma += pow(-1,i-1)/(2*i-1);
 
         }
-return 4*nawias;
+return 4*suma;
 }
 
 
@@ -27,7 +27,7 @@ int main()
     if (fork () != 0)
             {
                 printf ("Jestem rodzicem, moj pid = %d \n",getpid() );
-                n = rand()%4900+100;
+                n = rand()%4900+101;
                 printf("Wylosowane N: %d\n",n);
                 printf("Przyblizenie pi: %f\n",leibniz(n));
             }
@@ -35,7 +35,7 @@ int main()
             {
                 printf ("Ja potomek, moj pid = %d \n", getpid());
                 printf ("Pid rodzica = %d \n",getppid());
-                n = rand()%4900+100;
+                n = rand()%4900+101;
                 printf("Wylosowane N: %d\n",n);
                 printf("Przyblizenie pi: %f\n",leibniz(n));
     }
